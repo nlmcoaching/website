@@ -1,0 +1,17 @@
+# Netlify build config for this Vite + React (TypeScript) site.
+# Without this, Netlify was serving the raw repo (index.html -> /src/main.tsx),
+# which the browser rejects with an "application/octet-stream" MIME error.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA fallback: the app uses react-router BrowserRouter, so deep links and
+# page refreshes must serve index.html instead of 404ing.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
