@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { AppRoutes } from './nlm/AppRoutes';
 import { initViewportWidth } from './nlm/viewport';
 import './styles/nlmcoaching.css';
+import './styles/pmo.css';
 
 initViewportWidth();
 
